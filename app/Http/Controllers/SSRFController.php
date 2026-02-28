@@ -17,10 +17,8 @@ class SSRFController extends Controller
         ]);
     }
 
-    /**
-     * SSRF VULNERABLE:
-     * Toma una URL del usuario y el servidor hace la petición SIN validación.
-     */
+
+    // Toma una URL del usuario y el servidor hace la petición SIN validación. */
     public function fetchVulnerable(Request $request)
     {
         $url = trim($request->input('url'));
@@ -28,7 +26,7 @@ class SSRFController extends Controller
         try {
             $client = new Client([
                 'timeout' => 5,
-                // ⚠️ allow_redirects=true puede empeorar SSRF; aquí lo dejamos por defecto (vulnerable)
+                // allow_redirects=true puede empeorar SSRF; aquí lo dejamos por defecto (vulnerable)
             ]);
 
             $resp = $client->get($url);

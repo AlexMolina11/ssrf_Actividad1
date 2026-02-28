@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-<h1>SSRF Demo (Laravel 5)</h1>
+<h1>SSRF Demo (Laravel 8)</h1>
 
 <div class="box">
     <p class="hint">
