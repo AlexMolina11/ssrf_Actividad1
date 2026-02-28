@@ -16,7 +16,7 @@ class SSQLIController extends Controller
         ]);
     }
 
-    // ✅ Vulnerable: concatenación directa -> SQL Injection
+    // Vulnerable: concatenación directa -> SQL Injection
     public function loginVulnerable(Request $request)
     {
         $email = $request->input('email');
@@ -36,7 +36,7 @@ class SSQLIController extends Controller
         }
     }
 
-    // ✅ Mitigado: query parametrizada (Query Builder)
+    // Mitigado: query parametrizada (Query Builder)
     public function loginSecure(Request $request)
     {
         $email = $request->input('email');
